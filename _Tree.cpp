@@ -14,7 +14,7 @@ void TravelsePreorder(Tree* tree)
     }
 }
 
-int temp = 0;
+
 Tree* AddNode(Queue** queue)
 {
     char node;
@@ -23,7 +23,6 @@ Tree* AddNode(Queue** queue)
 
     if (node == '(')
     {
-        
         Tree* tree = new Tree;
 
         pop(queue, &node);

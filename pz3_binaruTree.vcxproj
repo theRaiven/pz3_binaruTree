@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="InOutput.cpp" />
     <ClCompile Include="NodesAtLevel.cpp" />
-    <ClCompile Include="pz3_binaruTree.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="queue.cpp" />
     <ClCompile Include="Tree.cpp" />
   </ItemGroup>

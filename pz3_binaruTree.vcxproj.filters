@@ -18,16 +18,19 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="queue.cpp">
+    <ClCompile Include="_Queue.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Tree.cpp">
+    <ClCompile Include="_Tree.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="NodesAtLevel.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="InOutput.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="_Stack.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

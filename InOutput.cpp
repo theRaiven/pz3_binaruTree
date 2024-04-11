@@ -49,8 +49,8 @@ int Output(Tree* tree, int& level)
     if (resFile != NULL)
     {
         
-        printf("\nКоличество вершин на уровне %d: %d", level,  countNodesAtLevel( tree, level, 0));
-        fprintf(resFile, "Количество вершин на уровне % d: % d\n", level, countNodesAtLevel(tree, level, 0));
+        printf("\nКоличество вершин на уровне %d: %d", level, сountNodesAtLevel_not(tree, level));
+        fprintf(resFile, "Количество вершин на уровне % d: % d\n", level, сountNodesAtLevel_not(tree, level));
         
     }
     else

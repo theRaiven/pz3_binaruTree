@@ -55,8 +55,3 @@ int pop(Queue** queue, char* num)
     }
 }
 
-bool Empty(Queue** queue)
-{
-    return *queue == NULL;
-
-}

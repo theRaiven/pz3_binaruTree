@@ -130,8 +130,9 @@
     <ClCompile Include="InOutput.cpp" />
     <ClCompile Include="NodesAtLevel.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="queue.cpp" />
-    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="_Queue.cpp" />
+    <ClCompile Include="_Stack.cpp" />
+    <ClCompile Include="_Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="level.txt" />

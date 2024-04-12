@@ -28,7 +28,7 @@ int Input(Tree** tree, int& deep)
     }
     else
     {
-        printf_s("Could not open file result.txt\n");
+        printf_s("Невозможно открыть файл result.txt\n");
         exit(0);
     }
 

@@ -26,22 +26,24 @@ int сountNodesAtLevel_not(Tree* root, int targetLevel)
     while (stack != NULL)
     {
         Tree* node;
-        int level;
+        int level; // уровень изымаемого в данный момент узла дерева 
         Pop(&stack, &node, &level);
-
-        if (level == targetLevel) // Если уровень текущего узла равен целевому уровню:
+        
+        if (level == targetLevel) // Если уровень текущего узла равен искомому уровню:
         {
             count++; // Увеличиваем счетчик узлов на целевом уровне.
         }
 
-        if (node->leftChild != NULL)
+        if (node->leftChild != NULL && level <= targetLevel)
         {
             PushFront(&stack, node->leftChild, level + 1);
         }
-        if (node->rightChild != NULL)
+        if (node->rightChild != NULL && level <= targetLevel)
         {
             PushFront(&stack, node->rightChild, level + 1);
         }
+        
+        
     }
 
     return count;

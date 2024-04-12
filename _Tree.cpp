@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void TravelsePreorder(Tree* tree)
+void TravelsePreorder(Tree* tree) 
 {
     printf("\nÓçåë èìååò çíà÷åíèå: %c ", tree->data);
 

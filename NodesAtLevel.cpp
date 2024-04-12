@@ -18,20 +18,20 @@ int сountNodesAtLevel_not(Tree* root, int targetLevel)
     if (root == NULL) return 0;
 
     Stack* stack = NULL;
-    PushFront(&stack, root, 0); // Добавление корень дерева в стек с уровнем 0.
+    PushFront(&stack, root, 0);             // Добавление корень дерева в стек с уровнем 0.
 
-    int count = 0; // Инициализация счетчика узлов на целевом уровне.
+    int count = 0;                          // Инициализация счетчика узлов на целевом уровне.
 
 
     while (stack != NULL)
     {
         Tree* node;
-        int level; // уровень изымаемого в данный момент узла дерева 
+        int level;                          // уровень изымаемого в данный момент узла дерева 
         Pop(&stack, &node, &level);
         
-        if (level == targetLevel) // Если уровень текущего узла равен искомому уровню:
+        if (level == targetLevel)           // Если уровень текущего узла равен искомому уровню:
         {
-            count++; // Увеличиваем счетчик узлов на целевом уровне.
+            count++;                        // Увеличиваем счетчик узлов на целевом уровне.
         }
 
         if (node->leftChild != NULL && level <= targetLevel)

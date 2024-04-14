@@ -1,4 +1,4 @@
-#include "Header.h"
+п»ї#include "Header.h"
 
 int Input(Tree** tree, int& deep)
 {
@@ -27,7 +27,7 @@ int Input(Tree** tree, int& deep)
     }
     else
     {
-        printf_s("Невозможно открыть файл result.txt\n");
+        printf_s("РќРµРІРѕР·РјРѕР¶РЅРѕ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р» result.txt\n");
         exit(0);
     }
 
@@ -48,8 +48,8 @@ int Output(Tree* tree, int& level, int& count)
     if (resFile != NULL)
     {
         
-        printf("\nКоличество вершин на уровне %d: %d\n\n", level, count);
-        fprintf(resFile, "Количество вершин на уровне % d: % d\n", level, count);
+        printf("\nРљРѕР»РёС‡РµСЃС‚РІРѕ РІРµСЂС€РёРЅ РЅР° СѓСЂРѕРІРЅРµ %d: %d\n\n", level, count);
+        fprintf(resFile, "РљРѕР»РёС‡РµСЃС‚РІРѕ РІРµСЂС€РёРЅ РЅР° СѓСЂРѕРІРЅРµ % d: % d\n", level, count);
         
     }
     else

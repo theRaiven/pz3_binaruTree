@@ -1,9 +1,9 @@
-#include "Header.h"
+ï»¿#include "Header.h"
 
 
 void TravelsePreorder(Tree* tree) 
 {
-    printf("Óçåë èìååò çíà÷åíèå: %c\n", tree->data);
+    printf("Ð£Ð·ÐµÐ» Ð¸Ð¼ÐµÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: %c\n", tree->data);
 
     if (tree->leftChild != NULL)
     {

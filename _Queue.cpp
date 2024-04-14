@@ -1,16 +1,16 @@
-#include "Header.h"
+ï»¿#include "Header.h"
 
 void PushBack(Queue** queue, char number)
 {
-    // Âûäåëÿåì ïàìÿòü äëÿ íîâîãî óçëà.
+    // Ð’Ñ‹Ð´ÐµÐ»ÑÐµÐ¼ Ð¿Ð°Ð¼ÑÑ‚ÑŒ Ð´Ð»Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ ÑƒÐ·Ð»Ð°.
     Queue* new_node = new Queue;
 
-    // Èíèöèàëèçèðóåì ïîëÿ íîâîãî óçëà.
+    // Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÐ¼ Ð¿Ð¾Ð»Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ ÑƒÐ·Ð»Ð°.
     new_node->data = number;
     new_node->ptrNext = new_node;
     new_node->ptrPrev = new_node;
 
-    // Åñëè ñïèñîê ïóñò, äåëàåì íîâûé ýëåìåíò ãîëîâíûì óçëîì.
+    // Ð•ÑÐ»Ð¸ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¿ÑƒÑÑ‚, Ð´ÐµÐ»Ð°ÐµÐ¼ Ð½Ð¾Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð³Ð¾Ð»Ð¾Ð²Ð½Ñ‹Ð¼ ÑƒÐ·Ð»Ð¾Ð¼.
     if (*queue == NULL)
     {
         *queue = new_node;
@@ -19,11 +19,11 @@ void PushBack(Queue** queue, char number)
         return;
     }
 
-    // Íàõîäèì ïîñëåäíèé ýëåìåíò ñïèñêà.
+    // ÐÐ°Ñ…Ð¾Ð´Ð¸Ð¼ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ¿Ð¸ÑÐºÐ°.
     Queue* last_node = *queue;
     last_node = last_node->ptrPrev;
 
-    // Âñòàâëÿåì íîâûé ýëåìåíò â êîíåö ñïèñêà.
+    // Ð’ÑÑ‚Ð°Ð²Ð»ÑÐµÐ¼ Ð½Ð¾Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð² ÐºÐ¾Ð½ÐµÑ† ÑÐ¿Ð¸ÑÐºÐ°.
     last_node->ptrNext = new_node;
     new_node->ptrPrev = last_node;
     new_node->ptrNext = *queue;

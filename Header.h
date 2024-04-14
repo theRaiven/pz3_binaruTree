@@ -1,5 +1,4 @@
 #pragma once
-#pragma execution_character_set("utf-8")
 
 #include <iostream>
 #include <Windows.h>
@@ -16,7 +15,7 @@ struct Queue
 };
 
 void PushBack(Queue** queue, char number);
-int pop(Queue** queue, char* num);
+int PopFrontQueue(Queue** queue, char* num);
 
 // стек
 struct Stack
@@ -29,7 +28,7 @@ struct Stack
 };
 
 void PushFront(Stack** stack, Tree* node, int level);
-int Pop(Stack** stack, Tree** node, int* level);
+int PopFrontStack(Stack** stack, Tree** node, int* level);
 
 // Дерево
 struct Tree
@@ -44,8 +43,8 @@ Tree* AddNode(Queue** queue);
 
 // ввод-вывод
 int Input(Tree** tree, int& deep);
-int Output(Tree* tree, int& deep);
+int Output(Tree* tree, int& level, int& count);
 
 // Основная задача
-int сountNodesAtLevel_not(Tree* tree, int targetLevel); //  не рекурсивно
-int countNodesAtLevel(Tree* tree, int level, int currentLevel); // рекурсивно
+int CountNodesAtLevel_not(Tree* tree, int targetLevel); //  не рекурсивно
+int CountNodesAtLevel(Tree* tree, int level, int currentLevel); // рекурсивно

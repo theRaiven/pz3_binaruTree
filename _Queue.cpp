@@ -30,7 +30,7 @@ void PushBack(Queue** queue, char number)
     (*queue)->ptrPrev = new_node;
 }
 
-int pop(Queue** queue, char* num)
+int PopFrontQueue(Queue** queue, char* num)
 {
     if ((*queue) != NULL)
     {

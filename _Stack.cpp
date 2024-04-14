@@ -1,6 +1,5 @@
 #include "Header.h"
 
-
 void PushFront(Stack** stack, Tree* node, int level)
 {
     Stack* newNode = new Stack;
@@ -23,7 +22,7 @@ void PushFront(Stack** stack, Tree* node, int level)
     (*stack) = newNode;
 }
 
-int Pop(Stack** stack, Tree** node, int* level)
+int PopFrontStack(Stack** stack, Tree** node, int* level)
 {
     if ((*stack) != NULL)
     {
@@ -48,3 +47,4 @@ int Pop(Stack** stack, Tree** node, int* level)
         return -1;
     }
 }
+

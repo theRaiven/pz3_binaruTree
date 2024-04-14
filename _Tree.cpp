@@ -1,8 +1,9 @@
 #include "Header.h"
 
+
 void TravelsePreorder(Tree* tree) 
 {
-    printf("\nУзел имеет значение: %c ", tree->data);
+    printf("Узел имеет значение: %c\n", tree->data);
 
     if (tree->leftChild != NULL)
     {
@@ -19,19 +20,19 @@ Tree* AddNode(Queue** queue)
 {
     char node;
 
-    pop(queue, &node);
+    PopFrontQueue(queue, &node);
 
     if (node == '(')
     {
         Tree* tree = new Tree;
 
-        pop(queue, &node);
+        PopFrontQueue(queue, &node);
 
         tree->data = node;
         tree->leftChild = AddNode(queue);
         tree->rightChild = AddNode(queue);
 
-        pop(queue, &node);
+        PopFrontQueue(queue, &node);
 
         return tree;
     }
@@ -44,5 +45,5 @@ Tree* AddNode(Queue** queue)
     {
         return NULL;
     }
-
 }
+

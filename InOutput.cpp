@@ -2,11 +2,10 @@
 
 int Input(Tree** tree, int& deep)
 {
-    char nodename = 0;
+    char nodeName = 0;
     Queue* queue = NULL;
     FILE* fileTree;
     FILE* fileLevel;
-
 
     fopen_s(&fileTree, "Test.txt", "r");
     fopen_s(&fileLevel, "level.txt", "r");
@@ -20,8 +19,8 @@ int Input(Tree** tree, int& deep)
 
         while (!feof(fileTree))
         {
-            fscanf_s(fileTree, "%c", &nodename, 1);
-            PushBack(&queue, nodename);
+            fscanf_s(fileTree, "%c", &nodeName, 1);
+            PushBack(&queue, nodeName);
         }
 
         *tree = AddNode(&queue);
@@ -38,7 +37,7 @@ int Input(Tree** tree, int& deep)
 
 
 
-int Output(Tree* tree, int& level)
+int Output(Tree* tree, int& level, int& count)
 {
     FILE* resFile;
 
@@ -49,8 +48,8 @@ int Output(Tree* tree, int& level)
     if (resFile != NULL)
     {
         
-        printf("\nКоличество вершин на уровне %d: %d", level, сountNodesAtLevel_not(tree, level));
-        fprintf(resFile, "Количество вершин на уровне % d: % d\n", level, сountNodesAtLevel_not(tree, level));
+        printf("\nКоличество вершин на уровне %d: %d\n\n", level, count);
+        fprintf(resFile, "Количество вершин на уровне % d: % d\n", level, count);
         
     }
     else
@@ -62,3 +61,4 @@ int Output(Tree* tree, int& level)
 
     return 0;
 }
+

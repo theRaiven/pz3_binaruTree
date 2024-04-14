@@ -12,9 +12,14 @@ int main()
 
 
     Tree* tree = NULL;
-    int deep = 0;
-    Input(&tree, deep);
+    int level = 0;
+    int numberOfNodesOnLevel;
+
+    Input(&tree, level);
     TravelsePreorder(tree);
-    Output(tree, deep);
+
+    numberOfNodesOnLevel = CountNodesAtLevel_not(tree, level);
+    
+    Output(tree, level, numberOfNodesOnLevel);
 }
 

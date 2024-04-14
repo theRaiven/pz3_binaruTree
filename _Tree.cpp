@@ -16,7 +16,7 @@ void TravelsePreorder(Tree* tree)
 }
 
 
-Tree* AddNode(Queue** queue)
+Tree* CreateTree(Queue** queue)
 {
     char node;
 
@@ -29,8 +29,8 @@ Tree* AddNode(Queue** queue)
         PopFrontQueue(queue, &node);
 
         tree->data = node;
-        tree->leftChild = AddNode(queue);
-        tree->rightChild = AddNode(queue);
+        tree->leftChild = CreateTree(queue);
+        tree->rightChild = CreateTree(queue);
 
         PopFrontQueue(queue, &node);
 
@@ -39,7 +39,7 @@ Tree* AddNode(Queue** queue)
 
     if (node == ',' || node == ' ')
     {
-        return AddNode(queue);
+        return CreateTree(queue);
     }
     if (node == '0')
     {

@@ -39,7 +39,7 @@ struct Tree
 };
 
 void TravelsePreorder(Tree* tree);
-Tree* AddNode(Queue** queue);
+Tree* CreateTree(Queue** queue);
 
 // ввод-вывод
 int Input(Tree** tree, int& deep);

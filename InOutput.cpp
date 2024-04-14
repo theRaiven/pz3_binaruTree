@@ -23,7 +23,7 @@ int Input(Tree** tree, int& deep)
             PushBack(&queue, nodeName);
         }
 
-        *tree = AddNode(&queue);
+        *tree = CreateTree(&queue);
     }
     else
     {

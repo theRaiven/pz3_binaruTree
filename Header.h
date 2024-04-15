@@ -16,17 +16,20 @@ void PushBack(Queue** queue, char number);
 int PopFrontQueue(Queue** queue, char* num);
 
 // стек
-struct Stack
+struct TreeAndLevel
 {
     Tree* data;
-    Stack* ptrNext;
-    Stack* ptrPrev;
-
     int level;
 };
 
-void PushFront(Stack** stack, Tree* node, int level);
-int PopFrontStack(Stack** stack, Tree** node, int* level);
+struct Stack
+{
+    TreeAndLevel treeAndLevel;
+    Stack* ptrNext;
+};
+
+void PushFront(Stack** stack, TreeAndLevel* treeAndLevel);
+int PopFrontStack(Stack** stack, TreeAndLevel* treeAndLevel);
 
 // Дерево
 struct Tree
@@ -45,4 +48,3 @@ int Output(Tree* tree, int& level, int& count);
 
 // Основная задача
 int CountNodesAtLevel_not(Tree* tree, int targetLevel); //  не рекурсивно
-int CountNodesAtLevel(Tree* tree, int level, int currentLevel); // рекурсивно

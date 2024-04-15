@@ -35,8 +35,6 @@ int Input(Tree** tree, int& deep)
     fclose(fileTree);
 }
 
-
-
 int Output(Tree* tree, int& level, int& count)
 {
     FILE* resFile;

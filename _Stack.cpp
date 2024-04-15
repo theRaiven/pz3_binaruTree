@@ -1,50 +1,30 @@
 ﻿#include "Header.h"
 
-void PushFront(Stack** stack, Tree* node, int level)
+void PushFront(Stack** stack, TreeAndLevel* node)
 {
     Stack* newNode = new Stack;
-    newNode->data = node;
-    newNode->level = level;
 
-    if ((*stack) == NULL)
-    {
-        newNode->ptrNext = newNode;
-        newNode->ptrPrev = newNode;
-    }
-    else
-    {
-        newNode->ptrNext = (*stack);
-        newNode->ptrPrev = (*stack)->ptrPrev;
-        (*stack)->ptrPrev->ptrNext = newNode;
-        (*stack)->ptrPrev = newNode;
-    }
+    newNode->treeAndLevel.data = node->data;
+    newNode->treeAndLevel.level = node->level;
 
-    (*stack) = newNode;
+    newNode->ptrNext = *stack;
+
+    *stack = newNode;
 }
 
-int PopFrontStack(Stack** stack, Tree** node, int* level)
+int PopFrontStack(Stack** stack, TreeAndLevel* node)
 {
-    if ((*stack) != NULL)
+    if (*stack == NULL)
     {
-        *node = (*stack)->data;
-        *level = (*stack)->level;
-
-        if ((*stack) == (*stack)->ptrNext)
-        {
-            (*stack) = NULL;
-        }
-        else
-        {
-            (*stack) = (*stack)->ptrNext;
-            (*stack)->ptrPrev = (*stack)->ptrPrev->ptrPrev;
-            (*stack)->ptrPrev->ptrNext = (*stack);
-        }
-
-        return 1;
+        return -1; 
     }
-    else
-    {
-        return -1;
-    }
+
+    (node)->data = (*stack)->treeAndLevel.data;
+    (node)->level = (*stack)->treeAndLevel.level;
+    
+    Stack* temp = *stack;
+    (*stack) = (*stack)->ptrNext;
+
+    delete temp;
 }
 

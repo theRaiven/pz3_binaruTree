@@ -1,51 +1,47 @@
 ﻿#include "Header.h"
 
-
-int CountNodesAtLevel(Tree* tree, int level, int currentLevel)
-{
-    if (tree == NULL) return 0;
-    
-    // Если текущий уровень соответствует целевому уровню, возвращаем 1
-    if (currentLevel == level) return 1;
-
-    // Рекурсивно обрабатываем левое и правое поддеревья с увеличением уровня на 1
-    return CountNodesAtLevel(tree->leftChild, level, currentLevel + 1) + CountNodesAtLevel(tree->rightChild, level, currentLevel + 1);
-}
-
-// Не рекурсивный (метод обхода pre-order)
 int CountNodesAtLevel_not(Tree* tree, int targetLevel)
 {
     if (tree == NULL) return 0;
 
+    TreeAndLevel node;
+
+    node.data = tree;
+    node.level = 0;
+
     Stack* stack = NULL;
-    PushFront(&stack, tree, 0);             // Добавление корень дерева в стек с уровнем 0.
+    PushFront(&stack, &node);             // Добавление корень дерева в стек с уровнем 0.
 
     int countNodes = 0;                          // Инициализация счетчика узлов на целевом уровне.
 
 
     while (stack != NULL)
     {
-        Tree* node; 
-        int level;                          // уровень изымаемого в данный момент узла дерева 
 
-        PopFrontStack(&stack, &node, &level);
-       // printf("Узел имеет значение: %c\n", node->data);
+        PopFrontStack(&stack, &node);
 
-        if (level == targetLevel)           // Если уровень текущего узла равен искомому уровню:
+        if (node.level == targetLevel)           // Если уровень текущего узла равен искомому уровню:
         {
             countNodes++;                        // Увеличиваем счетчик узлов на целевом уровне.
         }
-        
 
-        if (node->leftChild != NULL && level <= targetLevel)
+        // Добавляем левого потомка текущего узла в стек, если он существует и его уровень меньше или равен целевому уровню.
+        if (node.data->leftChild != NULL && node.level <= targetLevel)
         {
-            PushFront(&stack, node->leftChild, level + 1);
+            TreeAndLevel temp = node;
+            temp.data = temp.data->leftChild;
+            temp.level += 1;
+            PushFront(&stack, &temp);
         }
-        if (node->rightChild != NULL && level <= targetLevel)
+
+        // Добавляем правого потомка текущего узла в стек, если он существует и его уровень меньше или равен целевому уровню.
+        if (node.data->rightChild != NULL && node.level <= targetLevel)
         {
-            PushFront(&stack, node->rightChild, level + 1);
+            TreeAndLevel temp = node;
+            temp.data = temp.data->rightChild;
+            temp.level += 1;
+            PushFront(&stack, &temp);
         }
-        
     }
 
     return countNodes;
